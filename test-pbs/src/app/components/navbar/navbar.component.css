@@ -1,0 +1,17 @@
+nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #212121;
+  columns: white;
+  padding: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a.active {
+  color: yellow;
+}
