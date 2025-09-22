@@ -13,6 +13,7 @@
   <td>Capitalizado:</td>
   <!-- ! Intentar  -->
    <dd> {{ name().toUpperCase() }} </dd>
+   <dd> {{ name() | uppercase }} </dd>
 </dl>
 
 <button (click)="changeHero()" class="btn btn-primary mx-2">

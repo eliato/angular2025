@@ -1,8 +1,11 @@
+import { UpperCasePipe } from '@angular/common';
 import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-hero-page',
-  imports: [],
+  imports: [
+    UpperCasePipe
+  ],
   templateUrl: './hero-page.component.html',
   styleUrl: './hero-page.component.css'
 })
