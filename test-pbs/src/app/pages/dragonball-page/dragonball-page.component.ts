@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 
+
 interface Character {
   id: number;
   name: string;
@@ -20,9 +21,9 @@ export class DragonballPageComponent {
 
   characters = signal<Character[]>([
     {name: 'Goku', power: 9001, id: 1},
-    {name: 'Vegeta', power: 8001, id: 2},
+    /* {name: 'Vegeta', power: 8001, id: 2},
     {name: 'Picoro', power: 5001, id: 3},
-    {name: 'Yamcha', power: 50, id: 4},
+    {name: 'Yamcha', power: 50, id: 4}, */
 ]);
 
 addCharacter() {
