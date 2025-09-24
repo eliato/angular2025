@@ -1,10 +1,10 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
+import { GifsListComponent } from "../gifs-list/gifs-list.component";
 
 @Component({
   selector: 'app-trending-page',
-  imports: [],
+  imports: [GifsListComponent],
   templateUrl: './trending-page.component.html',
   styleUrl: './trending-page.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class TrendingPageComponent { }
