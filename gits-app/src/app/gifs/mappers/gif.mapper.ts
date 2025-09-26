@@ -1,18 +1,18 @@
 import { Gif } from "../interfaces/gif";
-import { GiphyResponse } from "../interfaces/giphy.interface";
+import { GiphyItem } from "../interfaces/giphy.interface";
 
 export class GifMapper {
 
-static mapGiphyItemtogif(item: GiphyResponse): Gif {
+static mapGiphyItemtogif(item: GiphyItem): Gif {
   return {
-    id: item.data[0].id,
-    title: item.data[0].title,
-    url: item.data[0].images.fixed_height.url
+    id: item.id,
+    title: item.title,
+    url: item.images.original.url
   };
 }
 
-  static mapGiphyToGifArray(items: GiphyResponse[]): Gif[] {
-    return items.map(GifMapper.mapGiphyItemtogif);
+  static mapGiphyItemsToGifArray(items: GiphyItem[]): Gif[] {
+    return items.map(this.mapGiphyItemtogif);
   }
 
 }
