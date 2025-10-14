@@ -8,6 +8,5 @@ Set-PSReadLineOption -EditMode Windows
 
 Set-PSReadLineOption -PredictionSource History
 Install-Module -Name PSReadLine -AllowPrerelease
-Install-Module -Name PSReadLine -RequiredVersion 2.2.2
-
+Install-Module -Name PSReadLine -RequiredVersion 2.2.2.
 
