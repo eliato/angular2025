@@ -39,11 +39,26 @@ export class GifService {
 
 
 
-
   }
 
 
+searchGifs(query: string) {
+    this.trendingGifsLoading.set(true);
 
+    this.http.get<GiphyResponse>(`${ environment.giphyApiUrl }/search`, {
+      params: {
+        api_key: environment.apiKey,
+        q: query,
+        limit: '25',
+        rating: 'g'
+      }
+    }).subscribe((resp) => {
+      const gifs = GifMapper.mapGiphyItemsToGifArray(resp.data);
+      this.trendingGifs.set(gifs);
+      this.trendingGifsLoading.set(false);
+      console.log('gifs', gifs);
+    });
+  }
 
 
 
