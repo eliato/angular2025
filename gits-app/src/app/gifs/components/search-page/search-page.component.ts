@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { GifsListComponent } from "../gifs-list/gifs-list.component";
+import { GifService } from '../../services/gif.service';
 
 @Component({
   selector: 'app-search-page',
@@ -9,7 +10,11 @@ import { GifsListComponent } from "../gifs-list/gifs-list.component";
 
 })
 export default class SearchPageComponent {
+
+girService = inject(GifService);
+
+
 onSearch(query: string) {
-console.log(query);
+this.girService.searchGifs(query);
 }
 }
