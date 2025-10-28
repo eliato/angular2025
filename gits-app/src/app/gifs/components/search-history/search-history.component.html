@@ -1,3 +1,5 @@
-<p>search-history works!</p>
+<h2 class="text-2xl font-bold m-4">Mostrando resultados para: {{ query() }}</h2>
 
-<h2>{{ query() }}</h2>
+<section>
+  <app-gifs-list [gifs]="gifsByKey()"></app-gifs-list>
+</section>
