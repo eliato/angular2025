@@ -50,7 +50,7 @@ export class GifService {
     this.http.get<GiphyResponse>(`${ environment.giphyApiUrl }/trending`, {
       params: {
         api_key: environment.apiKey,
-        limit: '25',
+        limit: '35',
         rating: 'g'
       }
     }).subscribe((resp) => {

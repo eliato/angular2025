@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { GifsListComponent } from "../gifs-list/gifs-list.component";
 import { GifService } from '../../services/gif.service';
 import { Gif } from '../../interfaces/gif';
@@ -21,9 +21,21 @@ gifs = signal<Gif[]>([]);
 onSearch(query: string) {
 this.girService.searchGifs(query).subscribe((resp) => {
   this.gifs.set(resp);
+
   console.log(resp);
 });
 }
+
+
+resultSearchFormatted = computed<Gif[][]>(() => {
+    const  groups = [];
+    for (let i = 0; i < this.gifs().length; i += 3) {
+      groups.push( this.gifs().slice(i, i + 3) );
+    }
+
+
+    return groups;
+  });
 
 
 }
