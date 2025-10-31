@@ -24,4 +24,13 @@ export default class SearchHistoryComponent {
   }
 );
 
+gifsByKeyFormatted = computed(() => {
+    const  groups = [];
+    const gifs = this.gifsByKey() || [];
+    for (let i = 0; i < gifs.length; i += 3) {
+      groups.push( gifs.slice(i, i + 3) );
+    }
+    return groups;
+  });
+
 }

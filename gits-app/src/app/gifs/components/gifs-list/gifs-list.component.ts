@@ -4,7 +4,7 @@ import { Gif } from '../../interfaces/gif';
 
 @Component({
   selector: 'app-gifs-list',
-  imports: [GifsListItemComponent],
+  imports: [],
   templateUrl: './gifs-list.component.html',
   styleUrl: './gifs-list.component.css',
 
